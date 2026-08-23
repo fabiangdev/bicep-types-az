@@ -6448,14 +6448,21 @@
   },
   {
     "$type": "ObjectType",
-    "name": "GetOperationStatusResponse",
+    "name": "BulkCreateCustomOperationStatusListResult",
     "properties": {
       "results": {
         "type": {
           "$ref": "#/565"
         },
         "flags": 1,
-        "description": "An array of resource operations based on their operation ids"
+        "description": "The virtual machine operation statuses on this page."
+      },
+      "nextLink": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The link to the next page of operation statuses."
       }
     }
   },
@@ -7868,12 +7875,31 @@
     }
   },
   {
+    "$type": "ObjectType",
+    "name": "GetOperationStatusResponse",
+    "properties": {
+      "results": {
+        "type": {
+          "$ref": "#/625"
+        },
+        "flags": 1,
+        "description": "An array of resource operations based on their operation ids"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/517"
+    }
+  },
+  {
     "$type": "ResourceFunctionType",
     "name": "virtualMachinesBulkGetOperationStatus",
     "resourceType": "Microsoft.Compute/locations",
     "apiVersion": "2026-08-06-preview",
     "output": {
-      "$ref": "#/516"
+      "$ref": "#/624"
     },
     "input": {
       "$ref": "#/622"
@@ -7933,7 +7959,7 @@
       },
       "results": {
         "type": {
-          "$ref": "#/627"
+          "$ref": "#/629"
         },
         "flags": 0,
         "description": "The results from the Hibernate request if no errors exist"
@@ -7952,10 +7978,10 @@
     "resourceType": "Microsoft.Compute/locations",
     "apiVersion": "2026-08-06-preview",
     "output": {
-      "$ref": "#/626"
+      "$ref": "#/628"
     },
     "input": {
-      "$ref": "#/625"
+      "$ref": "#/627"
     }
   },
   {
@@ -7985,7 +8011,7 @@
       },
       "reimageParameters": {
         "type": {
-          "$ref": "#/630"
+          "$ref": "#/632"
         },
         "flags": 0,
         "description": "Reimage parameters including base profile and per-resource overrides"
@@ -7998,14 +8024,14 @@
     "properties": {
       "baseProfile": {
         "type": {
-          "$ref": "#/631"
+          "$ref": "#/633"
         },
         "flags": 0,
         "description": "Common reimage profile applied to all resources unless overridden"
       },
       "resourceOverrides": {
         "type": {
-          "$ref": "#/634"
+          "$ref": "#/636"
         },
         "flags": 0,
         "description": "Per-resource reimage overrides"
@@ -8032,7 +8058,7 @@
       },
       "osProfile": {
         "type": {
-          "$ref": "#/632"
+          "$ref": "#/634"
         },
         "flags": 0,
         "description": "Specifies information required for reimaging the non-ephemeral OS disk."
@@ -8072,7 +8098,7 @@
       },
       "profile": {
         "type": {
-          "$ref": "#/631"
+          "$ref": "#/633"
         },
         "flags": 1,
         "description": "Per-resource reimage profile override"
@@ -8082,7 +8108,7 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/633"
+      "$ref": "#/635"
     }
   },
   {
@@ -8112,7 +8138,7 @@
       },
       "results": {
         "type": {
-          "$ref": "#/636"
+          "$ref": "#/638"
         },
         "flags": 0,
         "description": "The results from the reimage request if no errors exist"
@@ -8131,10 +8157,10 @@
     "resourceType": "Microsoft.Compute/locations",
     "apiVersion": "2026-08-06-preview",
     "output": {
-      "$ref": "#/635"
+      "$ref": "#/637"
     },
     "input": {
-      "$ref": "#/629"
+      "$ref": "#/631"
     }
   },
   {
@@ -8191,7 +8217,7 @@
       },
       "results": {
         "type": {
-          "$ref": "#/640"
+          "$ref": "#/642"
         },
         "flags": 0,
         "description": "The results from the start request if no errors exist"
@@ -8210,10 +8236,10 @@
     "resourceType": "Microsoft.Compute/locations",
     "apiVersion": "2026-08-06-preview",
     "output": {
-      "$ref": "#/639"
+      "$ref": "#/641"
     },
     "input": {
-      "$ref": "#/638"
+      "$ref": "#/640"
     }
   },
   {
@@ -8222,7 +8248,7 @@
     "properties": {
       "resourceConfigParameters": {
         "type": {
-          "$ref": "#/643"
+          "$ref": "#/645"
         },
         "flags": 1,
         "description": "resource creation payload"
@@ -8242,14 +8268,14 @@
     "properties": {
       "baseProfile": {
         "type": {
-          "$ref": "#/644"
+          "$ref": "#/646"
         },
         "flags": 0,
         "description": "Bulk Actions Virtual Machine Profile object that contains VM properties that are common across all VMs in this batch"
       },
       "resourceOverrides": {
         "type": {
-          "$ref": "#/646"
+          "$ref": "#/648"
         },
         "flags": 0,
         "description": "Bulk Actions Virtual Machine Profile array, that contains VM properties that should be overridden for each VM in the batch"
@@ -8270,7 +8296,7 @@
       },
       "flexProperties": {
         "type": {
-          "$ref": "#/647"
+          "$ref": "#/649"
         },
         "flags": 1,
         "description": "Flex properties used for VDI resource creation scenarios"
@@ -8296,7 +8322,7 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/645"
+      "$ref": "#/647"
     }
   },
   {
@@ -8305,14 +8331,14 @@
     "properties": {
       "vmSizeProfiles": {
         "type": {
-          "$ref": "#/648"
+          "$ref": "#/650"
         },
         "flags": 1,
         "description": "The list of VM size profiles to use for flex creation"
       },
       "osType": {
         "type": {
-          "$ref": "#/651"
+          "$ref": "#/653"
         },
         "flags": 1,
         "description": "The operating system type for the VMs"
@@ -8360,10 +8386,10 @@
     "$type": "UnionType",
     "elements": [
       {
-        "$ref": "#/649"
+        "$ref": "#/651"
       },
       {
-        "$ref": "#/650"
+        "$ref": "#/652"
       },
       {
         "$ref": "#/2"
@@ -8379,7 +8405,7 @@
       "$ref": "#/606"
     },
     "input": {
-      "$ref": "#/642"
+      "$ref": "#/644"
     }
   },
   {
@@ -8407,7 +8433,7 @@
       },
       "resourceIds": {
         "type": {
-          "$ref": "#/655"
+          "$ref": "#/657"
         },
         "flags": 1,
         "description": "The resources that should be delayed. If empty, the delay will apply to the all resources in the occurrence."
@@ -8429,7 +8455,7 @@
       "$ref": "#/571"
     },
     "input": {
-      "$ref": "#/654"
+      "$ref": "#/656"
     }
   }
 ]

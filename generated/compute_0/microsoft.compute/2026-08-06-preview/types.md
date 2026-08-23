@@ -158,7 +158,7 @@
 ## Function virtualMachinesGetOperationStatus (Microsoft.Compute/locations/bulkCreateCustom@2026-08-06-preview)
 * **Resource**: Microsoft.Compute/locations/bulkCreateCustom
 * **ApiVersion**: 2026-08-06-preview
-* **Output**: [GetOperationStatusResponse](#getoperationstatusresponse)
+* **Output**: [BulkCreateCustomOperationStatusListResult](#bulkcreatecustomoperationstatuslistresult)
 
 ## AcknowledgeBulkOperationErrorsRequest
 ### Properties
@@ -258,6 +258,11 @@
 * **storageProfile**: [StorageProfile](#storageprofile): Specifies the storage settings for the virtual machine disks.
 * **userData**: string: UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets in here. Minimum compute api-version: 2021-03-01.
 * **vmExtensions**: [BulkactionVMExtension](#bulkactionvmextension)[]: Virtual Machine Extensions Array to be applied to the Virtual Machines.
+
+## BulkCreateCustomOperationStatusListResult
+### Properties
+* **nextLink**: string: The link to the next page of operation statuses.
+* **results**: [ResourceOperation](#resourceoperation)[] (Required): The virtual machine operation statuses on this page.
 
 ## BulkCreateCustomOverride
 ### Properties
